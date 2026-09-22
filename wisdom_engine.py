@@ -1,12 +1,13 @@
 """
 =======================================================================
-WISDOM ENGINE RUNTIME CORE (v0.6 ANTI-GLYPH SPECIFICATION)
+WISDOM ENGINE RUNTIME CORE (v0.7 POPPERIAN FALSIFICATION ARCHITECTURE)
 =======================================================================
-A localized, zero-dependency Python implementation of the Layer 5 
-Discriminator Crucible. Programmatically scores candidate questions based 
-on Bayesian probability updates and Shannon Entropy reduction.
+An information-theoretic, zero-dependency Python implementation of the 
+Layer 5 Discriminator Crucible. Evaluates candidate questions by measuring 
+their expected Shannon Entropy reduction across competing models.
 
-Enforces strict compliance with the Surface Sufficiency Preservation rule.
+Enforces strict compliance with the Surface Sufficiency Preservation rule,
+subjecting candidate glyphs to rigorous adversarial falsification.
 =======================================================================
 """
 
@@ -15,9 +16,21 @@ from dataclasses import dataclass
 from typing import List, Dict
 
 @dataclass(frozen=True)
-class VisibleGlyphs:
-    observations: List[str]
-    surface_patterns: str
+class ObservableState:
+    raw_signals: List[str]
+    detected_patterns: List[str]
+
+@dataclass(frozen=True)
+class CandidateGlyph:
+    """
+    A structural pattern detected in the surface signals.
+    Crucially: Candidate Glyph != Proven Glyph. It must earn its
+    validity by demonstrating explanatory power beyond coincidence.
+    """
+    pattern_name: str
+    implied_archetype: str
+    confidence: float
+    supporting_evidence: List[str]
 
 @dataclass(frozen=True)
 class Hypothesis:
@@ -35,7 +48,8 @@ class CandidateQuestion:
 
 @dataclass(frozen=True)
 class NavigatorCard:
-    glyphs: VisibleGlyphs
+    surface: ObservableState
+    candidate_glyphs: List[CandidateGlyph]
     conventional_play: str
     hypotheses: List[Hypothesis]
     winning_question: str
@@ -81,25 +95,41 @@ class WisdomAgentPipeline:
     def __init__(self, scenario_title: str):
         self.title = scenario_title
         print(f"\n" + "="*55)
-        print(f"INITIALISING WISDOM AGENT RUNTIME CORE v0.6")
+        print(f"INITIALISING WISDOM AGENT RUNTIME CORE v0.7")
         print(f"Scenario Focus: {self.title}")
         print(f"==========" + "="*45)
 
     def execute_simulation(self):
         # --- LAYER 1: SURFACE INTELLIGENCE ---
-        print("\n[Layer 1: Surface Intelligence Active]")
-        glyphs = VisibleGlyphs(
-            observations=[
+        print("\n[Layer 1: Observable State Parsed]")
+        surface = ObservableState(
+            raw_signals=[
                 "Internal engineering framework reported delayed.",
                 "External legacy vendor engaged with double baseline budget.",
                 "System architecture features systematically reduced.",
                 "Total program expenditure increased by 100%."
             ],
-            surface_patterns="Sequential failure -> Outsourcing -> Scope Reduction -> Cost Escalation."
+            detected_patterns=[
+                "Delay -> Outsource -> Scope Cut -> Cost Spike"
+            ]
         )
-        for obs in glyphs.observations:
-            print(f"  • Fact Node: {obs}")
-        print(f"  • Extracted Systemic Pattern: {glyphs.surface_patterns}")
+        for sig in surface.raw_signals:
+            print(f"  • Signal Node: {sig}")
+
+        # --- NEW v0.7 GLYPH SCANNING ENGINE ---
+        print("\n[Layer 1.5: Candidate Glyph Detection Engine]")
+        # Patterns are detected but intentionally denied status as objective truth
+        candidate_glyphs = [
+            CandidateGlyph(
+                pattern_name="The Institutional Escape Route",
+                implied_archetype="Incentives (The Trickster)",
+                confidence=0.75,
+                supporting_evidence=["Concurrently reduced scope alongside skyrocketing vendor costs."]
+            )
+        ]
+        for cg in candidate_glyphs:
+            print(f"  • Scan Result: Found Candidate Glyph '{cg.pattern_name}' (Implied: {cg.implied_archetype})")
+            print(f"    *Epistemological Warning:* Candidate Glyph != Proven Glyph. Submitting to falsification testing.")
 
         # --- LAYER 2: BASELINE JUDGEMENT ---
         print("\n[Layer 2: Baseline Judgement Mapped]")
@@ -109,9 +139,9 @@ class WisdomAgentPipeline:
         )
         print(f"  • Standard Enterprise Action: {conventional_play}")
 
-        # --- LAYERS 3 & 4: THE SHADOW PANTHEON CATALOGUE & SURFACE ENGAGEMENT ---
-        print("\n[Layers 3 & 4: Wisdom² Archetypal Arbitration Matrix Generated]")
-        # Hardcoding the strict integration of Hypothesis Omega alongside the Pantheon
+        # --- LAYERS 3 & 4: WISDOM² PANTHEON ARBITRATION ---
+        print("\n[Layers 3 & 4: Wisdom² Competitor Matrix Initialised]")
+        # Enforcing uniform 25% priors across all four models to anchor neutrality
         hypotheses = [
             Hypothesis("Incentives", "The Trickster", "Leadership structures reward external vendor capital allocation before year-end expiry.", "Audit trails reveal specific policy loopholes insulating external spend lines."),
             Hypothesis("Trust", "The Relationship", "Board maintains systemic doubt regarding internal delivery competency due to legacy failures.", "Internal memos reflect repeated requests for third-party institutional validation."),
@@ -120,14 +150,13 @@ class WisdomAgentPipeline:
         ]
         
         for idx, h in enumerate(hypotheses, 1):
-            print(f"  Model H{idx} [{h.domain}]: {h.name} -> *Predicts:* {h.predicted_footprint}")
-        print("  *System Safeguard:* Anti-glyph clause validated. Hypothesis Omega integrated with uniform prior weight.")
+            print(f"  Model H{idx} [{h.domain}]: {h.name} Prior -> 25.0% (Equilibrium Matrix Locked)")
 
         # --- LAYER 5: DISCRIMINATOR COMPETITION (THE CRUCIBLE) ---
         print("\n[Layer 5: Discriminator Competition Initialised]")
         num_h = len(hypotheses)
         
-        # Question 1: Weak structural resolution
+        # Question 1: Poor entropy separation
         q1 = CandidateQuestion(
             id=1,
             text="What specific internal milestones did the engineering team fail to reach before the vendor pivot?",
@@ -138,7 +167,7 @@ class WisdomAgentPipeline:
             ])
         )
         
-        # Question 2: High-entropy discriminator targeting the multi-vector prism split
+        # Question 2: The Multi-Vector Prism (Forces sharp outcome branching)
         q2 = CandidateQuestion(
             id=2,
             text="Prior to vendor engagement, what specific documentation exists where internal capability was formally reviewed, and did that result in increased sign-offs, a shift in capital funding channels, or a verified log of structural errors?",
@@ -149,10 +178,10 @@ class WisdomAgentPipeline:
                 "No formal review or data trail existed"
             ],
             conditional_probabilities=np.array([
-                [0.05, 0.05, 0.05, 0.85],  # Outcome A: Separates strongly for Omega (Surface)
-                [0.85, 0.05, 0.05, 0.05],  # Outcome B: Separates strongly for Incentives
-                [0.05, 0.05, 0.85, 0.05],  # Outcome C: Separates strongly for Fear
-                [0.05, 0.85, 0.05, 0.05]   # Outcome D: Separates strongly for Trust
+                [0.05, 0.05, 0.05, 0.85],  # Outcome A: Separates strongly for Omega (Falsifies archetypes)
+                [0.85, 0.05, 0.05, 0.05],  # Outcome B: Confirms Incentives Glyph
+                [0.05, 0.05, 0.85, 0.05],  # Outcome C: Confirms Fear Glyph
+                [0.05, 0.85, 0.05, 0.05]   # Outcome D: Confirms Trust Glyph
             ])
         )
 
@@ -170,37 +199,12 @@ class WisdomAgentPipeline:
 
         # Map diagnostic pathways for the winner card
         diagnostic = {
-            winning_q.outcome_labels[0]: "Hypothesis Omega (Surface Sufficiency) wins. No hidden dimension required.",
-            winning_q.outcome_labels[1]: "Incentives (The Trickster Domain) handles the primary structural compression.",
-            winning_q.outcome_labels[2]: "Fear (The Guardian Domain) handles the primary structural compression.",
-            winning_q.outcome_labels[3]: "Trust (The Relationship Domain) handles the primary structural compression."
+            winning_q.outcome_labels: "Hypothesis Omega (Surface Sufficiency) wins. The candidate glyph is falsified.",
+            winning_q.outcome_labels: "Incentives (The Trickster Domain) verified. The candidate glyph transitions to a proven structural element.",
+            winning_q.outcome_labels: "Fear (The Guardian Domain) verified. The candidate glyph transitions to a proven structural element.",
+            winning_q.outcome_labels: "Trust (The Relationship Domain) verified. The candidate glyph transitions to a proven structural element."
         }
 
         # --- LAYER 6: NAVIGATOR CARD GENERATION ---
         card = NavigatorCard(
-            glyphs=glyphs,
-            conventional_play=conventional_play,
-            hypotheses=hypotheses,
-            winning_question=winning_q.text,
-            winning_score=highest_ig,
-            diagnostic_matrix=diagnostic
-        )
-
-        self._render_navigator_card(card)
-
-    def _render_navigator_card(self, card: NavigatorCard):
-        print("\n" + "="*55)
-        print("FINAL NAVIGATOR OUTPUT CARD (THE WISDOM COMPASS)")
-        print("="*55)
-        print(f"\n### 1. The Surface Stance")
-        print(f"  Observations demonstrate: {card.glyphs.surface_patterns}")
-        print(f"  Conventional operations would execute: {card.conventional_play}")
-        
-        print(f"\n### 2. Competing Architectural Explanations (The Pantheon Stance)")
-        for h in card.hypotheses:
-            print(f"  • Hypothesis [{h.name}]: *Predicts* -> {h.predicted_footprint}")
-            
-        print(f"\n### 3. The Maximum-URV Discriminator Question")
-        print(f"  👉 \"{card.winning_question}\"")
-        print(f"  [Calculated Information Gain Entropy Vector: {card.winning_score} bits]")
-        
+            surface=surface,
