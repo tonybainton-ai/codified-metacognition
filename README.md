@@ -1,4 +1,4 @@
-# Codified Metacognition: The WISDOM Agent Architecture (v0.7)
+# Codified Metacognition: The WISDOM Agent Architecture (v0.8)
 
 > **"Intelligence seeks answers. Judgement selects actions. Wisdom seeks hidden glyphs. Wisdom² seeks hidden glyphs behind the hidden glyphs."**
 
@@ -6,64 +6,233 @@
 
 ## The Core Hypothesis
 
-Contemporary artificial intelligence and enterprise decision engines are built on a dangerous evolutionary flaw: **the optimization for rapid answer-closure.** 
+Contemporary artificial intelligence and enterprise decision engines are built around a dangerous optimization pressure: **rapid answer-closure**.
 
-Traditional LLMs and agent workflows are designed to ingest a problem state, execute a swift pattern-match, and print a confident response. This architectural bias mirrors a critical human vulnerability: **premature narrative capture.** When a system (biological or silicon) encounters an operational disruption, it experiences high local entropy. To reduce this friction, it rushes to the first coherent explanation that satisfies its internal parameters, falls in love with its own statistical shadow, and stops searching. It turns a temporary lens into a permanent **Closed-Loop Belief System (CLBS)**.
+Traditional LLMs and agent workflows ingest a problem state, identify a coherent pattern, and produce an answer. This architectural bias mirrors a critical human vulnerability: **premature narrative capture**.
 
-**This repository introduces a cybernetic antidote.** 
+When a system encounters uncertainty, the first explanation capable of coherently compressing the available evidence can become disproportionately attractive. A temporary lens becomes a belief, the belief becomes the frame through which subsequent evidence is interpreted, and the reasoning process closes around its own assumptions.
 
-Codified Metacognition shifts the objective function of the reasoning layer from *Answer Generation* to **Uncertainty Reduction Velocity (URV)**. Instead of using internal adversarial loops to choose a winning truth, this architecture treats all competing explanations with strict, non-attached equivalence—systematically calculating and outputting the single **Max-Entropy Discriminator Question** with the highest expected information gain.
+The result is a **Closed-Loop Belief System (CLBS)**.
 
----
+**Codified Metacognition is an experimental architecture designed to resist that closure.**
 
-## The v0.7 Popperian Falsification Framework
+The WISDOM Agent shifts the objective function from *Answer Generation* toward **Uncertainty Reduction Velocity (URV)**.
 
-Version 0.7 introduces a critical epistemological safety patch: **The Anti-Glyph Safeguard**. 
+Rather than asking:
 
-Traditional symbolic models suffer from a form of hyper-intellectualized paranoia, automatically assuming every recurring pattern represents a hidden, systemic cause. Version 0.7 enforces an **Observational Decoupling Axiom: *All glyphs are observations, but not all observations are glyphs.***
+> *"Which explanation should I believe?"*
 
-The architecture explicitly separates the raw data (`ObservableState`) from unverified structural narratives (`CandidateGlyphs`). Furthermore, the mathematical core hardcodes **Hypothesis Omega (Surface Sufficiency)** with a uniform prior probability weight equal to the archetypal models. A hidden dimension is never assumed to exist by default; it must actively out-perform the simplicity of the surface reality under a rigorous process of scientific falsification. 
+WISDOM asks:
 
----
+> *"What observation would most efficiently distinguish between the explanations I currently consider plausible?"*
 
-## The 6-Layer Architecture Stack
-
-The WISDOM Agent operates as a sequential metacognitive state machine. Information flows forward through clean contracts, preventing judgment bias from bleeding backward into raw observations.
-
-
-[ Input: Observable State Signals ]│▼┌─────────────────────────────────────┐│ Layer 1: Surface Signals (Raw Data) │  --> Parse un-embellished data nodes└─────────────────────────────────────┘│▼┌─────────────────────────────────────┐│ Layer 1.5: Candidate Glyph Scan     │  --> Isolate unverified patterns└─────────────────────────────────────┘│▼┌─────────────────────────────────────┐│ Layer 2: Baseline Judgement         │  --> Map the conventional playbook└─────────────────────────────────────┘│▼┌─────────────────────────────────────┐│ Layer 3: The Shadow Pantheon        │  --> Map the 12 hidden dimensions└─────────────────────────────────────┘│▼┌─────────────────────────────────────┐│ Layer 4: Wisdom² Arbitration        │  --> Format 3-5 competing matrices└─────────────────────────────────────┘│▼┌─────────────────────────────────────┐│ Layer 5: Discriminator Competition  │  --> Calculate Max-Entropy Wedge└─────────────────────────────────────┘│▼┌─────────────────────────────────────┐│ Layer 6: Navigator Output           │  --> Return Lenses + Single Win-Question└─────────────────────────────────────┘
-
-1. **Layer 1: Surface Signals:** Parses raw, un-embellished facts and timelines. Strictly zero speculation.
-2. **Layer 1.5: Candidate Glyph Scan:** Identifies recurring patterns or narratives, treating them strictly as *unverified hypotheses* subject to immediate falsification testing.
-3. **Layer 2: Baseline Judgement:** Maps out what a standard, non-metacognitive playbook or enterprise governance body would immediately decide to do based on visible metrics.
-4. **Layer 3: The Shadow Pantheon Catalogue:** Audits the landscape against 12 precise latent dimensions (Trust, Fear, Capability, Incentives, Authority, Status, Time Pressure, Risk Perception, Identity, Knowledge, Resources, Procedural Drag) alongside the **Surface Sufficiency Filter (Omega Ground)**.
-5. **Layer 4: Wisdom² Arbitration:** Formulates 3-5 competing structural hypotheses, treating **Hypothesis Omega** with total equivalence.
-6. **Layer 5: Discriminator Competition:** Runs candidate queries through a Shannon Entropy crucible, scoring them on expected information gain to isolate the single question that forces the models to split.
-7. **Layer 6: Navigator Output:** Compiles the Unified Navigator Card, delivering the final state to human leaders as a clean, unclosed loop of competing perspectives anchored by the highest-value next question.
+Competing hypotheses are therefore treated as predictive models rather than narratives to defend. The system seeks the **Maximum-URV Discriminator Question**: the next question whose possible answers produce the greatest separation between competing explanations.
 
 ---
 
-## Repository Contents
+# v0.8 — The Epistemic Provenance Layer
 
-*   **`system_directive.txt`**: The production-ready system prompt designed for immediate deployment inside custom GPTs, LLM orchestration frameworks, or Microsoft Copilot Studio.
-*   **`wisdom_engine.py`**: A localized, zero-dependency Python 3 implementation of the Layer 5 Crucible, demonstrating how to mathematically score candidate questions based on Bayesian updates and Information Gain.
+Version 0.8 introduces a structural change to the WISDOM architecture:
+
+## **A probability is no longer just a number.**
+
+Earlier versions could mathematically distinguish competing hypotheses using Bayesian updates and Shannon entropy while remaining blind to an important question:
+
+> **Where did the probabilities entering those calculations come from?**
+
+Consider two likelihood estimates:
+
+```text
+P(O | H) = 0.73
+P(O | H) = 0.73
+```
+
+They are mathematically identical.
+
+They may be epistemically very different.
+
+The first might have been calculated from 14,000 historical observations.
+
+The second might be an expert judgement.
+
+The third might be an uncalibrated estimate generated by an LLM.
+
+Treating those values as epistemically interchangeable allows mathematically valid calculations to create **false precision**.
+
+v0.8 therefore introduces the **Epistemic Provenance Axiom**:
+
+> **Numerical equivalence does not imply epistemic equivalence.**
+
+Every evidence-bearing object and likelihood estimate can now retain information about its origin, lineage, uncertainty, calibration and evidentiary independence.
+
+The purpose is not to declare one source class inherently superior to another.
+
+Empirical data can be biased.
+
+Historical data can become obsolete.
+
+Experts can be poorly calibrated.
+
+Models can sometimes produce excellent estimates.
+
+**Provenance describes where a belief came from. Calibration measures how well that source performs. Neither alone determines truth.**
 
 ---
 
-## The Practical Enterprise Use Cases
+## Typed Epistemic Objects
 
-*   **Project Governance:** Kills the "False Green" by continuously bypass-auditing visible milestone charts to isolate hidden structural dependencies.
-*   **System Retrospectives:** Acts as an objective firewall during post-mortems, preventing protective blame narratives from hardening into systemic corporate dogma.
-*   **Executive Decision Support:** Subverts meeting room panic. It shifts the conversation from a high-emotion debate (*"Who is right?"*) into a highly surgical data-hunting objective (*"We need the answer to this exact query to separate our core assumptions"*).
+v0.8 separates two objects that are easily conflated:
+
+### Evidence
+
+An observation about the world.
+
+Examples:
+
+```text
+Revenue declined 14%.
+The deployment failed at 02:13.
+Three governance approvals were added.
+The project manager reports insufficient resources.
+```
+
+### Likelihood Estimate
+
+A statement about how expected an observation would be if a particular hypothesis were true.
+
+For example:
+
+```text
+P(three additional approvals | Fear hypothesis) = 0.81
+```
+
+These are not the same epistemic object.
+
+The engine therefore preserves their distinction.
+
+Conceptually:
+
+```python
+Evidence
+    value
+    provenance
+    source_id
+    observed_at
+    independence_group
+    sample_size
+    uncertainty
+    calibration_reference
+    derivation_parent_ids
+    assumptions
+```
+
+and:
+
+```python
+LikelihoodEstimate
+    hypothesis_id
+    observation_id
+    probability
+    provenance
+    source_id
+    uncertainty
+    calibration_reference
+    derivation_parent_ids
+    assumptions
+```
 
 ---
 
-## The Epistemological Stance
+# The Provenance Classes
 
-Consciousness is not any single archetype, nor is it the memory that remembers itself. 
-**Consciousness begins when a frame becomes observable as a frame.**
+WISDOM can distinguish between evidence and estimates originating from different epistemic pathways, including:
 
-The WISDOM Agent is not an automated keyboard worker designed to replace human processing. It is a metacognitive steering governor. Its value is not in finding hidden variables, but in **preventing premature closure.** It ensures that before an organization steps off an existential cliff, it has rendered its own invisible machinery completely visible.
+```text
+EMPIRICAL
+DOCUMENTARY
+EXPERT_ELICITED
+USER_ASSERTED
+MODEL_DERIVED
+MODEL_ESTIMATED
+SYNTHETIC
+UNKNOWN
+```
+
+These classifications are **descriptive, not hierarchical**.
+
+WISDOM does not automatically assume:
+
+```text
+EMPIRICAL = TRUE
+MODEL_ESTIMATED = FALSE
+```
+
+Instead it retains provenance so downstream reasoning can expose what a conclusion is actually made from.
+
+A posterior such as:
+
+```text
+P(H3) = 0.81
+```
+
+is therefore no longer sufficient by itself.
+
+The architecture can also expose that the transition toward `0.81` was driven predominantly by, for example:
+
+```text
+Empirical evidence          LOW
+Documentary evidence        MEDIUM
+Expert elicitation          LOW
+Model-derived reasoning     HIGH
+
+Likelihood calibration      UNKNOWN
+```
+
+This produces a fundamentally different statement:
+
+> **"The current posterior is 0.81."**
+
+becomes:
+
+> **"The current posterior is 0.81, but its movement is predominantly dependent upon uncalibrated model-estimated likelihoods."**
+
+The mathematics has not changed.
+
+**Our visibility into what the mathematics means has.**
 
 ---
-*Maintained under the Sep Tepi Open Source Framework. Balance Held.*
+
+# Evidence Lineage and Independence
+
+v0.8 also introduces the foundations of **evidence genealogy**.
+
+Five documents do not necessarily represent five independent observations.
+
+For example:
+
+```text
+Vendor Status Report
+        │
+        ├── Project Status Report
+        ├── Steering Committee Minutes
+        ├── Risk Register
+        └── Executive Briefing
+```
+
+may appear to provide four corroborating sources while all ultimately deriving from one upstream observation.
+
+WISDOM therefore retains:
+
+```text
+source_id
+derivation_parent_ids
+independence_group
+```
+
+where available.
+
+This creates the foundation for future detection of **epistemic double-counting** and correlated evidence.
+
+---
+
+#
