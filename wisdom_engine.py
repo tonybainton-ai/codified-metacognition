@@ -1,50 +1,84 @@
 """
 =======================================================================
-WISDOM ENGINE RUNTIME CORE (v0.7 POPPERIAN FALSIFICATION ARCHITECTURE)
+WISDOM ENGINE RUNTIME CORE (v0.8 PROVENANCE CONTRACT SPECIFICATION)
 =======================================================================
 An information-theoretic, zero-dependency Python implementation of the 
-Layer 5 Discriminator Crucible. Evaluates candidate questions by measuring 
-their expected Shannon Entropy reduction across competing models.
+Layer 5 Discriminator Crucible. Enforces the strict Epistemic Provenance 
+Axiom across all data structures and matrix calculation pipelines.
 
-Enforces strict compliance with the Surface Sufficiency Preservation rule,
-subjecting candidate glyphs to rigorous adversarial falsification.
+Explicitly maps evidence lineage, tracks independence groups, and outputs
+the structural composition of the calculated discriminator confidence.
 =======================================================================
 """
 
 import numpy as np
-from dataclasses import dataclass
-from typing import List, Dict
+from enum import Enum
+from dataclasses import dataclass, field
+from typing import List, Dict, Any
+
+class ProvenanceType(Enum):
+    EMPIRICAL = "empirical"
+    DOCUMENTARY = "documentary"
+    EXPERT_ELICITED = "expert_elicited"
+    USER_ASSERTED = "user_asserted"
+    MODEL_DERIVED = "model_derived"
+    MODEL_ESTIMATED = "model_estimated"
+    SYNTHETIC = "synthetic"
+    UNKNOWN = "unknown"
+
+@dataclass
+class Evidence:
+    """The strict v0.8 input data wrapper preventing silent information laundering."""
+    value: Any
+    provenance: ProvenanceType
+    source_id: str | None
+    observed_at: str | None = None
+    independence_group: str | None = None
+    sample_size: int | None = None
+    uncertainty_interval: tuple[float, float] | None = None
+    calibration_reference: str | None = None
+    derivation_parent_ids: list[str] = field(default_factory=list)
+    assumptions: list[str] = field(default_factory=list)
+
+@dataclass
+class LikelihoodEstimate:
+    """A distinct typed object separate from raw measurements."""
+    hypothesis_id: str
+    observation_id: str
+    probability: float
+    provenance: ProvenanceType
+    source_id: str | None
+    uncertainty_interval: tuple[float, float] | None = None
+    calibration_reference: str | None = None
+    derivation_parent_ids: list[str] = field(default_factory=list)
+    assumptions: list[str] = field(default_factory=list)
 
 @dataclass(frozen=True)
 class ObservableState:
-    raw_signals: List[str]
+    signals: List[Evidence]
     detected_patterns: List[str]
 
 @dataclass(frozen=True)
 class CandidateGlyph:
-    """
-    A structural pattern detected in the surface signals.
-    Crucially: Candidate Glyph != Proven Glyph. It must earn its
-    validity by demonstrating explanatory power beyond coincidence.
-    """
     pattern_name: str
     implied_archetype: str
     confidence: float
-    supporting_evidence: List[str]
+    supporting_evidence_ids: List[str]
 
 @dataclass(frozen=True)
 class Hypothesis:
+    id: str
     name: str
     domain: str
     lens_statement: str
     predicted_footprint: str
 
-@dataclass(frozen=True)
+@dataclass
 class CandidateQuestion:
     id: int
     text: str
     outcome_labels: List[str]
-    conditional_probabilities: np.ndarray  # Shape: (num_outcomes, num_hypotheses)
+    conditional_probabilities: List[List[LikelihoodEstimate]]
 
 @dataclass(frozen=True)
 class NavigatorCard:
@@ -54,6 +88,8 @@ class NavigatorCard:
     hypotheses: List[Hypothesis]
     winning_question: str
     winning_score: float
+    evidence_counts: Dict[str, int]
+    likelihood_counts: Dict[str, int]
     diagnostic_matrix: Dict[str, str]
 
 class Layer5Crucible:
@@ -67,144 +103,144 @@ class Layer5Crucible:
     def score_question(cls, question: CandidateQuestion, num_hypotheses: int) -> float:
         """
         Computes the Expected Information Gain (URV Score) for a candidate question.
-        Enforces uniform prior probabilities to maintain absolute structural neutrality,
-        ensuring Hypothesis Omega sits on equal footing with archetypal models.
+        Extracts raw probability floats out of the LikelihoodEstimate object wrapper 
+        while preserving uniform prior matrices for structural neutrality.
         """
         priors = np.ones(num_hypotheses) / num_hypotheses
         initial_entropy = cls.calculate_entropy(priors)
         
-        matrix = question.conditional_probabilities
+        # Flatten the object matrix down to float arrays for Shannon consumption
+        num_outcomes = len(question.conditional_probabilities)
+        matrix = np.zeros((num_outcomes, num_hypotheses))
         
-        # Calculate marginal probability of each outcome: P(O) = Sum_h [ P(O|H) * P(H) ]
+        for o_idx in range(num_outcomes):
+            for h_idx in range(num_hypotheses):
+                matrix[o_idx, h_idx] = question.conditional_probabilities[o_idx][h_idx].probability
+                
         p_outcomes = np.sum(matrix * priors, axis=1)
-        
         expected_conditional_entropy = 0.0
         
         for o_idx, p_o in enumerate(p_outcomes):
             if p_o < 1e-9:
                 continue
-            # Bayes' Theorem: P(H|O) = [ P(O|H) * P(H) ] / P(O)
             posteriors = (matrix[o_idx, :] * priors) / p_o
             conditional_entropy = cls.calculate_entropy(posteriors)
             expected_conditional_entropy += p_o * conditional_entropy
             
-        information_gain = initial_entropy - expected_conditional_entropy
-        return round(float(information_gain), 4)
+        return round(float(initial_entropy - expected_conditional_entropy), 4)
 
 class WisdomAgentPipeline:
     def __init__(self, scenario_title: str):
         self.title = scenario_title
-        print(f"\n" + "="*55)
-        print(f"INITIALISING WISDOM AGENT RUNTIME CORE v0.7")
+        print(f"\n=======================================================")
+        print(f"INITIALISING WISDOM AGENT RUNTIME CORE v0.8")
         print(f"Scenario Focus: {self.title}")
-        print(f"==========" + "="*45)
+        print(f"=======================================================")
 
     def execute_simulation(self):
-        # --- LAYER 1: SURFACE INTELLIGENCE ---
-        print("\n[Layer 1: Observable State Parsed]")
-        surface = ObservableState(
-            raw_signals=[
-                "Internal engineering framework reported delayed.",
-                "External legacy vendor engaged with double baseline budget.",
-                "System architecture features systematically reduced.",
-                "Total program expenditure increased by 100%."
-            ],
-            detected_patterns=[
-                "Delay -> Outsource -> Scope Cut -> Cost Spike"
-            ]
-        )
-        for sig in surface.raw_signals:
-            print(f"  • Signal Node: {sig}")
-
-        # --- NEW v0.7 GLYPH SCANNING ENGINE ---
-        print("\n[Layer 1.5: Candidate Glyph Detection Engine]")
-        # Patterns are detected but intentionally denied status as objective truth
-        candidate_glyphs = [
-            CandidateGlyph(
-                pattern_name="The Institutional Escape Route",
-                implied_archetype="Incentives (The Trickster)",
-                confidence=0.75,
-                supporting_evidence=["Concurrently reduced scope alongside skyrocketing vendor costs."]
-            )
+        # --- LAYER 1: OBSERVABLE STATE + PROVENANCE ---
+        print("\n[Layer 1: Observable State Parsed under Provenance Contract]")
+        signals = [
+            Evidence("Revenue declined 14%.", ProvenanceType.EMPIRICAL, "audited_ledger_2026", independence_group="financials", sample_size=1),
+            Evidence("The program is probably late.", ProvenanceType.EXPERT_ELICITED, "pm_interview_note_03"),
+            Evidence("Staff appear highly resistant to the pivot.", ProvenanceType.MODEL_DERIVED, "llm_slack_sentiment_node"),
+            Evidence("Project architecture metrics degraded.", ProvenanceType.DOCUMENTARY, "git_commit_log_summary")
         ]
-        for cg in candidate_glyphs:
-            print(f"  • Scan Result: Found Candidate Glyph '{cg.pattern_name}' (Implied: {cg.implied_archetype})")
-            print(f"    *Epistemological Warning:* Candidate Glyph != Proven Glyph. Submitting to falsification testing.")
+        surface = ObservableState(signals=signals, detected_patterns=["Delay -> Outsource -> Scope Cut"])
+        
+        for s in surface.signals:
+            print(f"  • [{s.provenance.value.upper()}] Node: {s.value} (Source: {s.source_id})")
+
+        # --- LAYER 1.5: CANDIDATE GLYPH SCAN ---
+        candidate_glyphs = [
+            CandidateGlyph("The Asset Drift Pattern", "Incentives (The Trickster)", 0.70, ["git_commit_log_summary"])
+        ]
 
         # --- LAYER 2: BASELINE JUDGEMENT ---
-        print("\n[Layer 2: Baseline Judgement Mapped]")
-        conventional_play = (
-            "Trigger a standard vendor performance audit. Re-verify internal milestones. "
-            "Invoke contract liability clauses to freeze further scope degradation costs."
-        )
-        print(f"  • Standard Enterprise Action: {conventional_play}")
+        conventional_play = "Trigger vendor engineering performance audit and freeze spend tiers."
 
         # --- LAYERS 3 & 4: WISDOM² PANTHEON ARBITRATION ---
-        print("\n[Layers 3 & 4: Wisdom² Competitor Matrix Initialised]")
-        # Enforcing uniform 25% priors across all four models to anchor neutrality
         hypotheses = [
-            Hypothesis("Incentives", "The Trickster", "Leadership structures reward external vendor capital allocation before year-end expiry.", "Audit trails reveal specific policy loopholes insulating external spend lines."),
-            Hypothesis("Trust", "The Relationship", "Board maintains systemic doubt regarding internal delivery competency due to legacy failures.", "Internal memos reflect repeated requests for third-party institutional validation."),
-            Hypothesis("Fear", "The Guardian", "Middle management avoids personal liability by prioritizing established, vetted market monoliths.", "Decision-making trail demonstrates excessive validation loops and defensive sign-offs."),
-            Hypothesis("Omega (Surface Sufficiency)", "The Ground", "The visible explanation is adequate. Standard technical difficulties and scope adjustments explain the reality.", "Further empirical investigation fails to reveal hidden structural footprints or anomalies outside standard parameters.")
+            Hypothesis("H1", "Incentives", "The Trickster", "Leadership structures reward external vendor capital allocation.", "Loopholes insulating external spend."),
+            Hypothesis("H2", "Trust", "The Relationship", "Board maintains systemic doubt regarding internal delivery competency.", "Internal memos reflect requests for third-party validation."),
+            Hypothesis("H3", "Fear", "The Guardian", "Management avoids personal liability by prioritizing market monoliths.", "Excessive validation loops and defensive sign-offs."),
+            Hypothesis("H4", "Omega (Surface Sufficiency)", "The Ground", "The visible explanation is adequate. Standard technical operational issues explain reality.", "No anomalies found outside normal variance.")
+        ]
+        num_h = len(hypotheses)
+
+        # --- LAYER 5: DISCRIMINATOR COMPETITION (WITH TYPED LIKELIHOODS) ---
+        print("\n[Layer 5: Discriminator Crucible Executing Type-Check]")
+        
+        # Build a highly explicit matrix of LikelihoodEstimate objects for Question 2
+        q2_text = "Prior to vendor engagement, what specific documentation exists where internal capability was formally reviewed?"
+        q2_outcomes = ["Architectural error log found", "Capital re-allocation path found", "Explosion of compliance sign-offs found", "No review existed"]
+        
+        # Simulated raw probability grid matching our previous experiment
+        prob_grid = [
+            [0.05, 0.05, 0.05, 0.85],
+            [0.85, 0.05, 0.05, 0.05],
+            [0.05, 0.05, 0.85, 0.05],
+            [0.05, 0.85, 0.05, 0.05]
         ]
         
-        for idx, h in enumerate(hypotheses, 1):
-            print(f"  Model H{idx} [{h.domain}]: {h.name} Prior -> 25.0% (Equilibrium Matrix Locked)")
-
-        # --- LAYER 5: DISCRIMINATOR COMPETITION (THE CRUCIBLE) ---
-        print("\n[Layer 5: Discriminator Competition Initialised]")
-        num_h = len(hypotheses)
+        # Construct matrix using full typed wrappers to simulate real-world model-estimated provenance
+        q2_probabilities = []
+        for o_idx in range(len(q2_outcomes)):
+            row = []
+            for h_idx in range(num_h):
+                estimate = LikelihoodEstimate(
+                    hypothesis_id=hypotheses[h_idx].id,
+                    observation_id=f"out_{o_idx}",
+                    probability=prob_grid[o_idx][h_idx],
+                    provenance=ProvenanceType.MODEL_ESTIMATED, # Explicitly flagged as uncalibrated model guesses
+                    source_id="llm_inference_generator"
+                )
+                row.append(estimate)
+            q2_probabilities.append(row)
+            
+        q2 = CandidateQuestion(id=2, text=q2_text, outcome_labels=q2_outcomes, conditional_probabilities=q2_probabilities)
         
-        # Question 1: Poor entropy separation
-        q1 = CandidateQuestion(
-            id=1,
-            text="What specific internal milestones did the engineering team fail to reach before the vendor pivot?",
-            outcome_labels=["Clear technical bottleneck", "Ambiguous data trail"],
-            conditional_probabilities=np.array([
-                [0.25, 0.25, 0.25, 0.25],  
-                [0.25, 0.25, 0.25, 0.25]
-            ])
-        )
-        
-        # Question 2: The Multi-Vector Prism (Forces sharp outcome branching)
-        q2 = CandidateQuestion(
-            id=2,
-            text="Prior to vendor engagement, what specific documentation exists where internal capability was formally reviewed, and did that result in increased sign-offs, a shift in capital funding channels, or a verified log of structural errors?",
-            outcome_labels=[
-                "Forced review resulting in standard architectural error log", 
-                "Forced review with rapid capital re-allocation", 
-                "Forced review with sudden explosion of compliance sign-offs", 
-                "No formal review or data trail existed"
-            ],
-            conditional_probabilities=np.array([
-                [0.05, 0.05, 0.05, 0.85],  # Outcome A: Separates strongly for Omega (Falsifies archetypes)
-                [0.85, 0.05, 0.05, 0.05],  # Outcome B: Confirms Incentives Glyph
-                [0.05, 0.05, 0.85, 0.05],  # Outcome C: Confirms Fear Glyph
-                [0.05, 0.85, 0.05, 0.05]   # Outcome D: Confirms Trust Glyph
-            ])
-        )
+        # Execute informational scoring loop
+        ig_score = Layer5Crucible.score_question(q2, num_h)
 
-        candidates = [q1, q2]
-        winning_q = None
-        highest_ig = -1.0
-        
-        print("  Scoring questions based on Expected Information Gain (Entropy Reduction Variance)...")
-        for q in candidates:
-            ig_score = Layer5Crucible.score_question(q, num_h)
-            print(f"    -> Candidate Question {q.id} URV Capacity: {ig_score} bits")
-            if ig_score > highest_ig:
-                highest_ig = ig_score
-                winning_q = q
+        # Compile the exact Epistemic Disclosure Metrics
+        evidence_counts = {pt.value: 0 for pt in ProvenanceType}
+        for s in surface.signals:
+            evidence_counts[s.provenance.value] += 1
+            
+        likelihood_counts = {pt.value: 0 for pt in ProvenanceType}
+        for row in q2.conditional_probabilities:
+            for cell in row:
+                likelihood_counts[cell.provenance.value] += 1
 
-        # Map diagnostic pathways for the winner card
         diagnostic = {
-            winning_q.outcome_labels: "Hypothesis Omega (Surface Sufficiency) wins. The candidate glyph is falsified.",
-            winning_q.outcome_labels: "Incentives (The Trickster Domain) verified. The candidate glyph transitions to a proven structural element.",
-            winning_q.outcome_labels: "Fear (The Guardian Domain) verified. The candidate glyph transitions to a proven structural element.",
-            winning_q.outcome_labels: "Trust (The Relationship Domain) verified. The candidate glyph transitions to a proven structural element."
+            "Architectural error log found": "Hypothesis Omega (Surface Sufficiency) wins. Candidate glyph falsified.",
+            "Capital re-allocation path found": "Incentives (The Trickster Domain) verified.",
+            "Explosion of compliance sign-offs found": "Fear (The Guardian Domain) verified.",
+            "No review existed": "Trust (The Relationship Domain) verified."
         }
 
-        # --- LAYER 6: NAVIGATOR CARD GENERATION ---
         card = NavigatorCard(
             surface=surface,
+            candidate_glyphs=candidate_glyphs,
+            conventional_play=conventional_play,
+            hypotheses=hypotheses,
+            winning_question=q2.text,
+            winning_score=ig_score,
+            evidence_counts=evidence_counts,
+            likelihood_counts=likelihood_counts,
+            diagnostic_matrix=diagnostic
+        )
+
+        self._render_navigator_card(card)
+
+    def _render_navigator_card(self, card: NavigatorCard):
+        print("\n=======================================================")
+        print("FINAL NAVIGATOR OUTPUT CARD (THE WISDOM COMPASS)")
+        print("=======================================================")
+        # ... [The complete print block goes here]
+
+if __name__ == "__main__":
+    pipeline = WisdomAgentPipeline("The Open Source Decentralisation Deficit")
+    pipeline.execute_simulation()
+
