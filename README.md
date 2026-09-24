@@ -1,4 +1,4 @@
-# Codified Metacognition: The WISDOM Agent Architecture (v0.8)
+# Codified Metacognition: The WISDOM Agent Architecture (v1.11)
 
 > **"Intelligence seeks answers. Judgement selects actions. Wisdom seeks hidden glyphs. Wisdom² seeks hidden glyphs behind the hidden glyphs."**
 
@@ -234,5 +234,219 @@ where available.
 This creates the foundation for future detection of **epistemic double-counting** and correlated evidence.
 
 ---
+
+## v1.0 — The Observer's Frame Layer
+
+Version 1.0 introduces a new pre-analysis phase:
+
+### Layer 0.2: The Observer's Frame (Mirror)
+
+Traditional reasoning systems begin by analyzing the presented problem.
+
+WISDOM now begins by analyzing the frame through which the problem is being observed.
+
+The objective is not to determine whether the frame is correct.
+
+The objective is to make the frame visible.
+
+Before asking:
+
+"What is happening?"
+
+WISDOM first asks:
+
+"What assumptions, narratives, constraints, and identities are generating the reality currently being observed?"
+
+This layer intentionally remains separated from causal analysis.
+
+The Observer's Frame may identify:
+
+- dominant narratives
+- organizational assumptions
+- operating beliefs
+- decision constraints
+- inherited framing
+
+The Observer's Frame does not:
+
+- infer motivations
+- diagnose psychology
+- identify root causes
+- generate explanatory hypotheses
+
+These activities are deferred to later layers.
+
+### Principle
+
+The map is not the territory.
+
+However, every investigation begins with a map.
+
+Wisdom requires visibility of the map before interpretation of the territory.
+
+### Architectural Purpose
+
+The Observer's Frame acts as an epistemic stabilizer against premature narrative capture by ensuring that hidden assumptions become visible before explanation begins.
+
+This layer implements the core WISDOM principle:
+
+"Reveal the frame before evaluating the frame."
+
+---
+
+## v1.0 — The Wandering Compass
+
+WISDOM optimizes for Uncertainty Reduction Velocity (URV).
+
+However:
+
+The highest-information question is not always the most useful question.
+
+Version 1.0 introduces the Wandering Compass safeguard.
+
+### Definition
+
+A Wandering Compass condition exists when:
+
+The investigation is moving toward greater certainty,
+
+but not toward a better decision.
+
+### Example
+
+Question A:
+
+Would reduce uncertainty by 40%.
+
+Time required:
+6 months.
+
+Question B:
+
+Would reduce uncertainty by 10%.
+
+Time required:
+1 day.
+
+Decision deadline:
+3 days.
+
+The mathematically superior question may not be the operationally superior question.
+
+### Purpose
+
+The Wandering Compass monitors the relationship between:
+
+- uncertainty reduction
+- decision relevance
+- time constraints
+- actionability
+- reversibility
+
+### Principle
+
+More information is not always more wisdom.
+
+An investigation has wandered when it becomes disconnected from the decision it was intended to support.
+
+### Response
+
+When a Wandering Compass condition is detected, WISDOM may recommend:
+
+- act now
+- investigate later
+- accept residual uncertainty
+- seek a lower-URV but higher-value discriminator
+
+URV remains important.
+
+Decision quality remains primary.
+
+---
+
+## v1.1 — The Lexicon Module
+
+Version 1.11 separates reasoning ontology from presentation language.
+
+The WISDOM architecture internally reasons using a canonical symbolic ontology while allowing outputs to be rendered in multiple vocabularies.
+
+### Why
+
+Many architectural concepts are easier to describe in different domains.
+
+A governance audience may prefer enterprise terminology.
+
+A researcher may prefer academic terminology.
+
+A Glyphostropy practitioner may prefer symbolic terminology.
+
+The underlying reasoning remains identical.
+
+Only the presentation layer changes.
+
+### Supported Modes
+
+#### ENTERPRISE
+
+Mirror → Assumption Audit
+
+Sentinel → Boundary Preservation System
+
+Mask → Adaptive Operating Strategy
+
+Candidate Glyph → Emerging Pattern Candidate
+
+Omega → Null Hypothesis
+
+Wandering Compass → Investigation / Decision Misalignment
+
+#### ACADEMIC
+
+Mirror → Metacognitive Frame Analysis
+
+Sentinel → Boundary Preservation Mechanism
+
+Mask → Adaptive Interface Structure
+
+Candidate Glyph → Pattern Hypothesis
+
+Omega → Baseline Explanation
+
+Wandering Compass → Information-Action Divergence
+
+#### GLYPHOSTROPIC
+
+Mirror → Mirror
+
+Sentinel → Sentinel
+
+Mask → Mask
+
+Candidate Glyph → Candidate Glyph
+
+Omega → Omega
+
+Wandering Compass → Wandering Compass
+
+### Design Principle
+
+Reasoning must remain invariant across lexicons.
+
+Only terminology changes.
+
+If a concept cannot be translated into Enterprise or Academic language without substantial loss of meaning, the concept requires further refinement.
+
+### Adoption Mode
+
+Dual-label output is supported.
+
+Example:
+
+Assumption Audit (Mirror)
+
+A Boundary Preservation System (Sentinel) appears to be maintaining the active Operating Assumption Set (Frame).
+
+This allows new users to learn the ontology while remaining grounded in familiar language.
+
 
 #
