@@ -68,7 +68,7 @@ Ritual
 → Change Process
 
 Sentinel
-→ Protective Control Structure
+→ Autonomous Boundary Preservation Mechanism
 
 Mask
 → Adaptive Operating Strategy
@@ -128,7 +128,7 @@ Ritual
 → Transformative Process
 
 Sentinel
-→ Boundary Preservation Mechanism
+→ Boundary Preservation System
 
 Mask
 → Adaptive Interface Structure
@@ -240,6 +240,18 @@ The observed pattern may represent ordinary
 behaviour rather than containment dynamics.
 
 ### Translation Rules ###
+RULE 0
+
+The Lexicon Module changes language only.
+
+It MUST NOT alter:
+- reasoning path
+- hypothesis generation
+- uncertainty assessment
+- decision logic
+- confidence estimation
+
+Only terminology may change.
 
 RULE 1
 
