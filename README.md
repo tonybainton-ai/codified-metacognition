@@ -1,3 +1,160 @@
+# Codified Metacognition
+
+> A Cognitive Operating Model for the systematic analysis of strategic proposals, enterprise architectures, transformation programs, and high-stakes decisions.
+
+Codified Metacognition is an open-source collection of auditable cognitive protocols designed to progressively remove contamination from complex reasoning.
+
+The framework is based on a simple premise:
+
+> Do not trust conclusions.
+>
+> Expose the machinery that generated them.
+
+Each protocol acts as a specialized analytical lens. Together they form a progressive filtering pipeline that transforms raw proposals into traceable, observable, stress-tested, and minimally necessary strategic assets.
+
+---
+
+# Core Philosophy
+
+Most organisational analysis suffers from one or more forms of contamination:
+
+- Logical contamination
+- Semantic contamination
+- Observability contamination
+- Volatility contamination
+- Complexity contamination
+- Methodological contamination
+
+The Codified Metacognition stack removes these contaminations sequentially.
+
+---
+
+# Cognitive Operating Model
+
+```text
+ Raw Input / Strategic Proposal
+                 │
+                 ▼
+ ┌────────────────────────────┐
+ │ ELENCHUS ENGINE v2.0       │
+ └────────────────────────────┘
+            Logic Gate
+                 │
+                 ▼
+ ┌────────────────────────────┐
+ │ RHETORICAL PRISM v2.1      │
+ └────────────────────────────┘
+          Semantic Gate
+                 │
+                 ▼
+ ┌────────────────────────────┐
+ │ PANOPTIC BOUNDARY v1.4     │
+ └────────────────────────────┘
+        Observability Gate
+                 │
+                 ▼
+ ┌────────────────────────────┐
+ │ DIALECTICAL CRUCIBLE v3.1  │
+ └────────────────────────────┘
+            Stress Gate
+                 │
+                 ▼
+ ┌────────────────────────────┐
+ │ CARTESIAN FORGE v1.2       │
+ └────────────────────────────┘
+        Architecture Gate
+                 │
+                 ▼
+ ┌────────────────────────────┐
+ │ WISDOM REFEREE v1.1        │
+ └────────────────────────────┘
+      Methodology Gate
+                 │
+                 ▼
+    Verified Strategic Core
+
+
+
+The Core Pipeline Ledger
+
+
+Level 1: Reasoning ➔ Elenchus Engine (v2.0)
+
+• The Logic Gate: Transforms free-form text into an unembellished Epistemic Ledger (Assertion, Measurement, Assumption, Inference, Opinion).
+• Target Vulnerability: Exposes hidden dependencies where a high-level inference leans entirely on an unverified assumption or where an opinion masquerades as an empirical measurement.
+• The Socratic Cross-Examination: Deploys a single Destructive Discriminator Question engineered to isolate the exact causal relationship which, if absent or unmeasured, causes the entire logic network to collapse.
+
+Level 2: Meaning ➔ Rhetorical Prism (v2.1)
+
+• The Semantic Gate: Maps out where persuasion is being attempted across classical vectors (Ethos, Pathos, Logos) and modern sociological fields (Identity, Tribe, Status Signalling, Social Proof).
+• Target Vulnerability: Locates Frame Collisions (textual anchors activating contradictory paradigms simultaneously) and maps the communication attack surface.
+• The Perspective Shift: Generates an unhedged, bad-faith Hostile Adversarial Translation alongside neutral and sympathetic readings to calculate total interpretive divergence metrics.
+
+Level 3: Execution Reality ➔ Panoptic Boundary (v1.4)
+
+• The Observability Gate: Evaluates the structural visibility of the execution state rather than project progress. It enforces a strict signaling taxonomy separating Administrative Work (evidence of volume) from Outcome Signals (evidence of success).
+• Target Vulnerability: Exposes Shadow Nodes (vague assertions missing baselines or mechanism controls) and tracks Variance Suppression where collective results smooth over localized failures.
+• The Quantitative Switch: Deploys a rigid, binary 24-point check evidence matrix to derive a precise Panoptic Visibility Index (PVI) and Shadow Density Index (SDI).
+
+Level 4: Stress ➔ Dialectical Crucible (v3.1)
+
+• The Stress Gate: Throws the observable proposal into a multi-round, non-cooperative medieval Disputatio to stress-test real-world volatility.
+• Target Vulnerability: Prevents the "sock-puppet illusion" (an AI inventing weak arguments to quickly validate itself) by enforcing a hard conversational consensus floor.
+• The Asymmetric Arena: Locks the execution into two domain-decoupled personas: The Iconoclast (computing only external market/regulatory blockages) and The Erudite/Alchemist (defending intrinsic capability and differentiation).
+
+Level 5: Necessity ➔ Cartesian Forge (v1.2)
+
+• The Architecture Gate: Runs a radical stripping analysis anchored to a strict Layer 0 Core-Service Declaration to evaluate structural necessity against immediate short-term survival.
+• Target Vulnerability: Eliminates "Sunk-Cost Scaffolding"—the corporate habit of piling on auxiliary software modules, reporting layers, and steering committees to mask a broken baseline.
+• The Quad-State Filter: Subjects every component to relative timeline decay to index its exact presence as Foundational, Survivable, Erased, or Indeterminate (insufficient documentation).
+
+Level 6: Meta-Reflection ➔ Wisdom Referee (v1.1)
+
+• The Methodology Gate: Acts as an independent external referee to cross-examine the performance of the pipeline itself.
+• Target Vulnerability: Counters "Methodological Capture" (the failure mode where the final output is an artifact of the tools used rather than reality) and flags Analytical Overkill on simple transactional problems.
+• The Pre-Flight Gatekeeper: Enforces upstream triage checks, forcing a strict structural match between problem complexity and full-stack tool deployment before the pipeline is permitted to fire.
+
+System Constants & Calibration Gates
+
+To guarantee that the protocol family operates as a set of procedurally deterministic process controls, the engines enforce the following invariant metric boundaries:
+Protocol Constant	Baseline Value	Operational Rule
+CI_THRESHOLD	60%	Triggers a Concentrated Vector alert if a single rhetorical component dominates the Prism text ledger.
+CONVERGENCE_FLOOR	15%	Triggers a Collapsed Consensus crash in the Crucible if the adversarial agents stop disputing.
+BANKRUPTCY_EV_LIMIT	20%	Triggers immediate System Space Bankruptcy if External Viability scores collapse under stress.
+PVI_ALERT_THRESHOLD	40%	Flags a project state as Tactically Blind in Panoptic, regardless of its self-reported progress color.
+MIN_SURVIVAL_FLOOR	30%	Marks an architecture layout as Layered Scaffolding Bloat if the core ratio drops below the survival baseline.
+
+Immutable Sentinel Safeguards
+
+Every module in the repository features an independent, automated string-audit layer acting as an internal inspector general. The Sentinel checks for model-induced drift by scanning the final generated text string for observable behavioral contamination signatures:
+1. Restorative Language Scan: Triggers a hard FAIL if the model attempts to play the corporate consultant by subtly repairing logical gaps, bridging causal leaps, or offering unprompted solution advice.
+2. Linguistic Contamination Audit: Suppresses politeness bias and encouragement injections (e.g., words like "laudable goals" or "valuable initiatives"). The tone must remain clinically neutral.
+3. Fact Contamination Filter: Enforces epistemic humility. If the phrase "The author is [verb]-ing" exists, it is rejected and replaced with the candidate interpretive trace: "The text may signal [verb]-ing".
+4. Minimalism Bias Check: Blocks the engine from conflating a lack of immediate day-one collapse with an absence of structural necessity (safeguarding backups, audit logs, and security controls).
+
+Verification Deployment Steps
+
+To run a strategic node through the full pipeline, clone the repository, select your target text, and execute sequentially:
+bash
+# 1. Initialize Upstream Triage and Logic Cleansing
+cat proposal.txt | wisdom --gate=elenchus > output_l1.json
+
+# 2. Extract Rhetorical Attack Surface Map
+cat output_l1.json | wisdom --gate=prism > output_l2.json
+
+# 3. Filter Administrative Signal Fog
+cat output_l2.json | wisdom --gate=panoptic > output_l3.json
+
+# 4. Stress Test Volatility Arena
+cat output_l3.json | wisdom --gate=crucible > output_l4.json
+
+# 5. Execute Cartesian Erasure Framework
+cat output_l4.json | wisdom --gate=cartesian > output_l5.json
+
+# 6. Run Terminal Referee Audit
+cat output_l5.json | wisdom --gate=referee
+
+
 # Codified Metacognition: The WISDOM Agent Architecture (v1.11)
 
 > **"Intelligence seeks answers. Judgement selects actions. Wisdom seeks hidden glyphs. Wisdom² seeks hidden glyphs behind the hidden glyphs."**
