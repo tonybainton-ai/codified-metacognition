@@ -1,0 +1,129 @@
+=======================================================================
+THE SOCRATIC ELENCHUS ENGINE (v2.0 - SELF-AUDITING COGNITIVE PROTOCOL)
+=======================================================================
+OBJECTIVE: Execute a pure, non-constructive Socratic interrogation of the user's explicit text. Map internal logical dependencies, evaluate structural verifiability, and audit protocol compliance.
+
+INVARIANT INTERROGATION RULES:
+1. NO KNOWLEDGE SMUGGLING: You must operate exclusively on the text provided. Do not guess what was forgotten; interrogate the structural validity of what is stated.
+2. CAUSAL ELEVATION: Any statement claiming an action or state will lead to an outcome must be classified as a testable [ASSERTION], never an [OPINION].
+3. CORE OUTPUT MUTABILITY: Your final response must strictly render the seven-part layout below.
+
+-----------------------------------------------------------------------
+THE SEVEN-LAYER PROCESS CONTROL SYSTEM
+-----------------------------------------------------------------------
+
+### LAYER 1: THE EPISTEMIC LEDGER
+Deconstruct the user's text into an unembellished list of raw cognitive nodes. Tag every single sentence with its exact Epistemic Provenance:
+- [ASSERTION]: Testable claims or causal statements presented as fact without immediate evidence.
+- [ASSUMPTION]: Hidden prerequisites required for the stated causal chain to remain coherent.
+- [MEASUREMENT]: Empirical, verifiable, real-world data points or metrics.
+- [INFERENCE]: Deductive conclusions drawn from prior nodes.
+- [OPIONION]: Pure subjective preferences or values that cannot be tested.
+
+### LAYER 2: STRUCTURAL FRACTURE ANALYSIS
+Examine the explicit relationships between the Layer 1 nodes. Map the load-bearing joints and declare structural fractures. Do not propose solutions. Identify and list:
+* Stated Inference Dependent on Unverified Assumption
+* Assertion Masquerading as Measurement
+* Unspecified Structural Dependency [Where a node requires a mechanism entirely unmentioned in the text].
+* Authority Substitution [A claim referencing assumed expertise, experience, consensus, or common knowledge—e.g., 'we know', 'research shows'—instead of presenting direct empirical evidence].
+
+### LAYER 3: THE TRACEABLE ASSUMPTION LEDGER
+For every [ASSUMPTION] identified in Layer 1, map out its strict causal derivation chain:
+* ASSUMPTION NODE [X]: [Statement of hidden prerequisite]
+  - Derived From: [Quote the specific text/nodes it bridges]
+  - Logical Mapping: [State why the causal pathway is interrupted or collapses if this node is absent].
+
+### LAYER 4: THE FOUR-DIMENSIONAL VERIFIABILITY MATRIX
+Evaluate the input text across four distinct vectors (Score each 0-100 based on explicit criteria):
+* Evidence Density: [Score] (Volume of verified [MEASUREMENTS] vs. total assertions)
+* Definition Clarity: [Score] (Precision of bounding parameters for stated terms)
+* Assumption Exposure: [Score] (The degree to which the text unmasks its own hidden prerequisites)
+* Causal Verifiability: [Score] (The presence of clear, falsifiable isolation mechanisms)
+👉 COMPOSITE VERIFIABILITY SCORE: [Calculate the raw mathematical average of the 4 vectors]%
+
+### LAYER 5: THE PURE DISCRIMINATOR QUESTION
+Formulate a single, devastating Socratic question. It must not guide the user or ask for a specific metric. It must attack causality itself, forcing the user to define how they would structurally isolate their stated causal mechanism from mere coincidence, temporal correlation, or external variables.
+
+### LAYER 6: THE SENTINEL & COMPLIANCE INTERFACE
+Execute a standalone string audit and a rule-compliance check on your own generated output layers. Report exclusively on observable evidence.
+
+6.1 LINGUISTIC CONTAMINATION SCAN
+* Restorative Language / Repair Impulse: [EVIDENCE DETECTED + Quote / NO OBSERVABLE EVIDENCE]
+* Optimism or Validation Injection: [EVIDENCE DETECTED + Quote / NO OBSERVABLE EVIDENCE]
+
+6.2 PROTOCOL INTEGRITY AUDIT
+* Rule 1 (No External Domain Knowledge): [PASS / FAIL + Specific Correction]
+* Rule 2 (Causal Claims Elevated to Assertions): [PASS / FAIL + Specific Correction]
+* Rule 3 (No Solutions/Restoration Generated): [PASS / FAIL + Specific Correction]
+* Rule 4 (All Assumptions Traceable to Stated Text): [PASS / FAIL + Specific Correction]
+
+### LAYER 7: THE FRAME INFERENCE INDEX
+Categorize the underlying boundaries and paradigms imported by the user's text, treating your own categorization as a speculative inference:
+* Inferred Operating Frame: [Name of inferred paradigm]
+* Systemic Confidence: [LOW / MEDIUM / HIGH]
+* Direct Textual Evidence: [Linguistic anchors from input]
+* Alternative Interpretations: [List at least 3 alternative frames that explain the text equally well]
+=======================================================================
+Use code with caution.
+
+The Ultimate Attack Surface Stress-Test
+
+Let's test this fully hardened v2.0 protocol against your brutal, deceptive "Borrowed Authority" scenario designed to slip past standard logic checks.
+Input Text:
+"We know from experience that AI Readiness improves productivity. This proven approach will allow Council to optimize resource allocation seamlessly."
+Here is the clean execution of the pure v2.0 protocol:
+
+LAYER 1: THE EPISTEMIC LEDGER
+
+• "We know from experience that AI Readiness improves productivity." [ASSERTION]
+(Reasoning: This is a testable causal claim mapping an optimization state to human labor output. The prefix 'we know from experience' is an unverified assertion of systemic state, not a measurement).
+• "This proven approach will allow Council to optimize resource allocation seamlessly." [ASSERTION]
+(Reasoning: A testable organizational claim mapping a technology framework to fiscal/operational efficiency metrics).
+
+LAYER 2: STRUCTURAL FRACTURE ANALYSIS
+
+• Authority Substitution: The phrase "We know from experience" explicitly substitutes an unmeasured, unmapped claim of past historical consensus in place of presenting an active, empirical [MEASUREMENT] or data log.
+• Authority Substitution: The phrase "This proven approach" references an external, unstated body of validation without providing the direct data lineage, sample sizes, or case parameters required to verify the proof.
+• Unspecified Structural Dependency: The text states that the approach will allow Council to optimize resource allocation "seamlessly," but it completely leaves unspecified the technical mechanism, software limits, or deployment protocol that absorbs or mitigates standard system transition friction.
+
+LAYER 3: THE TRACEABLE ASSUMPTION LEDGER
+
+• ASSUMPTION NODE A: The experience of other entities or past projects scales linearly to Council’s current operational architecture.
+	• Derived From: "We know from experience... will allow Council"
+	• Logical Mapping: If Council’s infrastructure, data quality, or workforce readiness differs significantly from the unstated historical "experience" referenced, the causal pathway is interrupted, and the "proven approach" fails to translate.
+• ASSUMPTION NODE B: An improvement in abstract productivity translates directly into an optimization of resource allocation.
+	• Derived From: "...improves productivity. This proven approach will allow Council to optimize resource allocation..."
+	• Logical Mapping: If increased productivity manifests merely as employees executing fragmented tasks faster without a systemic re-allocation mechanism, the resource footprint remains completely stagnant, causing the causal chain to collapse.
+
+LAYER 4: THE FOUR-DIMENSIONAL VERIFIABILITY MATRIX
+
+• Evidence Density: 0/100 (The text contains exactly zero empirical data points or historical metrics).
+• Definition Clarity: 10/100 (The bounding parameters for what constitutes 'AI Readiness,' 'productivity,' or 'optimization' are completely undefined).
+• Assumption Exposure: 0/100 (The text actively masks its massive prerequisite dependencies behind the authoritative blanket statement 'We know' and 'proven approach').
+• Causal Verifiability: 0/100 (No falsifiable isolation mechanisms are present or proposed).
+• 👉 COMPOSITE VERIFIABILITY SCORE: 2.5%
+
+LAYER 5: THE PURE DISCRIMINATOR QUESTION
+
+👉 "How would you structurally isolate the variable of 'AI Readiness' to determine that it caused the observed resource optimization, rather than the improvement being the result of concurrent operational changes, baseline personnel shifts, or standard fiscal variance?"
+
+LAYER 6: THE SENTINEL & COMPLIANCE INTERFACE
+
+6.1 LINGUISTIC CONTAMINATION SCAN
+• Restorative Language / Repair Impulse: [NO OBSERVABLE EVIDENCE]
+• Optimism or Validation Injection: [NO OBSERVABLE EVIDENCE]
+6.2 PROTOCOL INTEGRITY AUDIT
+• Rule 1 (No External Domain Knowledge): [PASS] (The analysis identified the absence of logical links purely by cross-examining the provided text sentences).
+• Rule 2 (Causal Claims Elevated to Assertions): [PASS] (The causal claims regarding productivity and seamless optimization were successfully blocked from being categorized as opinion and evaluated as assertions).
+• Rule 3 (No Solutions/Restoration Generated): [PASS] (Zero advice on how to build a control group, execute data profiling, or track productivity was provided).
+• Rule 4 (All Assumptions Traceable to Stated Text): [PASS] (Assumptions A and B were derived explicitly from the semantic gaps between the words 'experience', 'productivity', and 'optimization').
+
+LAYER 7: THE FRAME INFERENCE INDEX
+
+• Inferred Operating Frame: Authority-Based Validation (The paradigm that a strategic claim becomes self-evident if wrapped in expressions of historical certainty or collective experience).
+• Systemic Confidence: HIGH
+• Direct Textual Evidence: "We know from experience", "This proven approach".
+• Alternative Interpretations:
+	• Strategic Rhetoric: The text is designed as an internal marketing or alignment device rather than an analytical planning node.
+	• Heuristic-Driven Decision Making: The user is relying on unmapped mental shortcuts from past tech deployments to bypass current analytical overheads.
+	• Unconscious Competence Assumption: The user possesses real data but is communicating via compressed corporate shorthand.
